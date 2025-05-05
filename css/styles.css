@@ -88,18 +88,29 @@ h2 {
     padding-bottom: 24px;
     transition: color 250ms ease-in-out;
 
-
-}
-
-.header-nav-link:active {
-    color: #404BBF;
 }
 
 .header-nav-link:hover {
     color: #404BBF;
 }
 
-.header-nav-link:hover::after {
+.header-nav-link:active {
+    color: #404BBF;
+}
+
+.header-nav-link:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    transition: background-color 250ms ease-in-out;
+    
+}
+
+.header-nav-link:active::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -112,6 +123,17 @@ h2 {
 
 .header-nav-link:focus {
     color: #404bbf;
+}
+
+.header-nav-link:focus::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: #404BBF;
+    border-radius: 2px;
 }
 
 .header-address {
@@ -190,6 +212,7 @@ h2 {
     height: 56px;
     border-radius: 4px;
     margin-top: 48px;
+    transition: background-color 250ms ease-in-out;
 }
 
 .hero-button:hover {
@@ -297,6 +320,9 @@ h2 {
     background-color: #FFFFFF;
     width: calc((100% - 72px) / 4);
     border-radius: 0px 0px 4px 4px;
+    box-shadow: 0 1px 6px rgba(46, 47, 66, 0.08),
+        0 2px 1px rgba(46, 47, 66, 0.08),
+        0 1px 1px rgba(46, 47, 66, 0.16);
 
 }
 
@@ -356,7 +382,12 @@ h2 {
     border-radius: 50%;
     width: 40px;
     height: 40px;
+    transition: background-color 250ms ease-in-out;
 
+}
+
+.social-link:hover {
+    background-color: #404BBF;
 }
 
 .social-icon {
@@ -382,6 +413,15 @@ h2 {
 
 .portfolio-card {
     width: calc((100% - 48px) / 3);
+    transition: box-shadow 250ms ease-in-out;
+}
+
+.portfolio-card:hover {
+    box-shadow: 0 1px 6px rgba(46, 47, 66, 0.08),
+            0 2px 1px rgba(46, 47, 66, 0.08),
+            0 1px 1px rgba(46, 47, 66, 0.16);
+            
+                
 }
 
 .portfolio-card-container {
@@ -389,6 +429,33 @@ h2 {
     border: 1px solid #e7e9fc;
     border-top: none;
 }
+
+.portfolio-img-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-text-overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px 32px;
+    background-color: #4D5AE5;
+    color: #F4F4FD;
+    transform: translateY(100%);
+    transition: transform 500ms ease-in-out;
+
+}
+
+.portfolio-card:hover .portfolio-text-overlay {
+    transform: translateY(0);
+    
+}
+
+
 
 .portfolio-card-img {
     max-width: 100%;
@@ -451,11 +518,11 @@ h2 {
 
 .footer-social-list {
     display: flex;
-    gap: 24px;
+    gap: 16px;
     width: 232px;
-    padding-top: 8px;
-    justify-content: center;
-    align-items: center;
+    padding-top: 16px;
+    /* justify-content: center;
+    align-items: center; */
 
 
 }
@@ -470,7 +537,12 @@ h2 {
     border-radius: 50%;
     width: 40px;
     height: 40px;
+    transition: background-color 250ms ease-in-out;
 
+}
+
+.footer-social-link:hover {
+    background-color: #31D0AA;
 }
 
 .footer-social-icon {
