@@ -52,6 +52,9 @@ h2 {
 
 .header {
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-logo {
@@ -77,6 +80,7 @@ h2 {
 .header-nav-links {
     display: flex;
     gap: 40px;
+    color: #404bbf;;
 }
 
 .header-nav-link {
@@ -86,7 +90,7 @@ h2 {
     letter-spacing: 0.02em;
     padding-top: 24px;
     padding-bottom: 24px;
-    transition: color 250ms ease-in-out;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -101,10 +105,11 @@ h2 {
 .header-nav-link:after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     height: 4px;
     width: 100%;
+    /* background-color: #404bbf; */
     border-radius: 2px;
     transition: background-color 250ms ease-in-out;
     
@@ -154,6 +159,8 @@ h2 {
     font-weight: 400;
     letter-spacing: 0.02em;
     color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .header-address-link:hover {
@@ -212,7 +219,7 @@ h2 {
     height: 56px;
     border-radius: 4px;
     margin-top: 48px;
-    transition: background-color 250ms ease-in-out;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover {
@@ -236,8 +243,6 @@ h2 {
 
 .features-cards {
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
     gap: 24px;
 }
 
@@ -262,6 +267,7 @@ h2 {
     border: 1px solid #8E8F99;
     border-radius: 4px;
     height: 112px;
+    margin-bottom: 8px;
 }
 
 .features-icon {
@@ -275,7 +281,6 @@ h2 {
     letter-spacing: 0.02em;
     color: #2E2F42;
     margin-bottom: 8px;
-    margin-top: 8px;
 }
 
 .features-card {
@@ -382,11 +387,15 @@ h2 {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    transition: background-color 250ms ease-in-out;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
 .social-link:hover {
+    background-color: #404BBF;
+}
+
+.social-link:focus {
     background-color: #404BBF;
 }
 
@@ -413,7 +422,7 @@ h2 {
 
 .portfolio-card {
     width: calc((100% - 48px) / 3);
-    transition: box-shadow 250ms ease-in-out;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-card:hover {
@@ -443,15 +452,16 @@ h2 {
     width: 100%;
     height: 100%;
     padding: 40px 32px;
+    letter-spacing: 0.02em;
     background-color: #4D5AE5;
     color: #F4F4FD;
     transform: translateY(100%);
-    transition: transform 500ms ease-in-out;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
 .portfolio-card:hover .portfolio-text-overlay {
-    transform: translateY(0);
+    transform: translateY(0%);
     
 }
 
